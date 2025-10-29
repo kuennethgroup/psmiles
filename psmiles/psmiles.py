@@ -433,10 +433,10 @@ class PolymerSmiles:
             "PolyBERT fingerprints require the 'sentence-transformers' Python package."
             " Please install with "
             "`pip install 'psmiles[polyBERT]@git+https://github.com/"
-            "Ramprasad-Group/psmiles.git'` "
+            "kuennethgroup/psmiles.git'` "
             "Or "
             "`poetry add git+https://github.com/"
-            "Ramprasad-Group/psmiles.git -E polyBERT` "
+            "kuennethgroup/psmiles.git -E polyBERT` "
         )
 
         from sentence_transformers import SentenceTransformer

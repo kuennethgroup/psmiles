@@ -30,7 +30,7 @@ ps = PS("C(c1ccccc1)(C[*])[*]")
 ps.canonicalize
 ```
 
-See the [Documentation](https://psmiles.readthedocs.io/) for more. Also, check out [`test_book.ipynb`](https://github.com/Ramprasad-Group/psmiles/blob/main/tests/test_book.ipynb) for examples.
+See the [Documentation](https://psmiles.readthedocs.io/) for more. Also, check out [`test_book.ipynb`](https://github.com/kuennethgroup/psmiles/blob/main/tests/test_book.ipynb) for examples.
 
 
 ## Features, functions, and roadmap
@@ -38,7 +38,6 @@ See the [Documentation](https://psmiles.readthedocs.io/) for more. Also, check o
 - [x] Canonicalize PSMILES strings (via the [canonicalize_psmiles](https://github.com/Ramprasad-Group/canonicalize_psmiles) package)
 - [x] Polymer fingerprints (descriptors or features)
     - [x] polyBERT fingerprints (see [polyBERT](https://github.com/Ramprasad-Group/polyBERT) and [arXiv](https://arxiv.org/abs/2209.14803))
-    - [x] [Mordred](https://github.com/mordred-descriptor/mordred) fingerprints
     - [x] Circular (Morgen) fingerprints as implemented in RDKit
     - [x] RDKit fingerprints as implemented in RDKit
 - [x] Dimerize PSMILES strings
@@ -52,19 +51,19 @@ See the [Documentation](https://psmiles.readthedocs.io/) for more. Also, check o
 
 
 ```bash
-pip install git+https://github.com/Ramprasad-Group/psmiles.git
+pip install git+https://github.com/kuennethgroup/psmiles.git
 
-# With polyBERT and mordred fingerprints
-pip install 'psmiles[polyBERT,mordred]@git+https://github.com/Ramprasad-Group/psmiles.git'
+# With polyBERT
+pip install 'psmiles[polyBERT]@git+https://github.com/kuennethgroup/psmiles.git'
 ```
 
-## Install with poetry
+## Install with uv
 
 ```bash
-poetry add git+https://github.com/Ramprasad-Group/psmiles.git
+uv add git+https://github.com/kuennethgroup/psmiles.git
 
-# With polyBERT and mordred fingerprints
-poetry add git+https://github.com/Ramprasad-Group/psmiles.git -E polyBERT -E mordred
+# With polyBERT 
+uv add 'psmiles[polyBERT]@git+https://github.com/kuennethgroup/psmiles.git'
 ```
 
 
@@ -72,7 +71,7 @@ poetry add git+https://github.com/Ramprasad-Group/psmiles.git -E polyBERT -E mor
 
 
 ```sh
-git clone https://github.com/Ramprasad-Group/psmiles.git
+git clone https://github.com/kuennethgroup/psmiles.git
 cd psmiles
-poetry install -E polyBERT -E mordred
+uv sync --extra polyBERT 
 ```
