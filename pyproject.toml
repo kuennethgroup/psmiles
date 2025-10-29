@@ -1,43 +1,51 @@
-[tool.poetry]
+[project]
 name = "psmiles"
 version = "0.6.10"
 description = "A Python package for working with PSMILES (polymer SMILES) strings."
-authors = ["Christopher Kuenneth <christopher.kuenneth@gmail.com>"]
-license = "MIT"
+authors = [{ name = "Christopher Kuenneth", email = "christopher.kuenneth@gmail.com" }]
+requires-python = ">=3.8,<4.0"
 readme = "README.md"
-repository = "https://github.com/Ramprasad-Group/psmiles"
-keywords = ["science", "polymer", "SMILES"]
+license = "MIT"
+keywords = [
+    "science",
+    "polymer",
+    "SMILES",
+]
+dependencies = [
+    "numpy>1.19.0",
+    "pandas>1.1.0",
+    "rdkit>=2022.3.3",
+    "scikit-learn>=1.1.2,<2",
+    "canonicalize-psmiles",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.8,<4.0"
-numpy = ">1.19.0"
-pandas = ">1.1.0"
-rdkit = ">=2022.3.3"
-scikit-learn = "^1.1.2"
-canonicalize-psmiles = {git = "https://github.com/Ramprasad-Group/canonicalize_psmiles.git"}
+[project.optional-dependencies]
+mordred = ["mordred>=1.2.0,<2"]
+polyBERT = ["sentence-transformers>=2.2.0,<3"]
+docs = [
+    "mkdocstrings[python]>=0.19.0,<0.20",
+    "mkdocs>=1.4.2,<2",
+    "mkdocs-material>=8.5.11,<9",
+    "mkdocstrings-python>=0.8.2,<0.9",
+    "mkdocs-jupyter>=0.22.0,<0.23",
+]
 
-mordred = {version = "^1.2.0", optional = true}
-sentence-transformers = {version = "^2.2.0", optional = true}
-mkdocs = {version = "^1.4.2", optional = true}
-mkdocs-material = {version = "^8.5.11", optional = true}
-mkdocstrings = {extras = ["python"], version = "^0.19.0"}
-mkdocstrings-python = {version = "^0.8.2", optional = true}
-mkdocs-jupyter = {version = "^0.22.0", optional = true}
+[project.urls]
+Repository = "https://github.com/Ramprasad-Group/psmiles"
 
+[dependency-groups]
+dev = [
+    "pytest>=7.4.0,<8",
+    "ipykernel>=6.6.1,<7",
+    "black>=22.8.0,<23",
+    "pre-commit>=2.20.0,<3",
+]
 
-[tool.poetry.extras]
-mordred = ["mordred"]
-polyBERT = ["sentence-transformers"]
-docs = ["mkdocstrings", "mkdocs", "mkdocs-material", "mkdocstrings-python", "mkdocs-jupyter"]
+[tool.uv]
 
-[tool.poetry.group.dev.dependencies]
-black = {version = "^22.8.0", allow-prereleases = true}
-pre-commit = "^2.20.0"
-
-[tool.poetry.dev-dependencies]
-pytest = "^7.4.0"
-ipykernel = "^6.6.1"
+[tool.uv.sources]
+canonicalize-psmiles = { git = "https://github.com/Ramprasad-Group/canonicalize_psmiles.git" }
 
 [build-system]
-requires = ["poetry_core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
