@@ -400,22 +400,18 @@ class PolymerSmiles:
 
         Note:
             PSMILES strings are canonicalized for the computation
-            of the ci, mordred, and RDKit fingerprints.
+            of the ci and RDKit fingerprints.
 
         Args:
             fp (str, optional): Choose fingerprint from 'ci',
-                'rdkit', 'polyBERT', 'mordred', 'pg'. Defaults to 'ci'.
+                'rdkit' and 'polyBERT'. Defaults to 'ci'.
 
         Returns:
             Union[Dict[str, float], np.ndarray]: Fingerprint vector
         """
         fp = fp.lower()
-        if fp == "pg":
-            return self.fingerprint_pg
-        elif fp == "ci":
+        if fp == "ci":
             return self.fingerprint_circular
-        elif fp == "mordred":
-            return self.fingerprint_mordred
         elif fp == "rdkit":
             return self.fingerprint_rdkit
         elif fp == "polybert" or fp == "pb":
@@ -465,37 +461,6 @@ class PolymerSmiles:
         from pgfingerprinting import fp as pgfp
 
         return pgfp.fingerprint_from_smiles(self.psmiles)
-
-    @property
-    def fingerprint_mordred(self) -> Dict[str, float]:
-        """Compute the mordred fingerprint
-
-        Note:
-            PSMILES string is canonicalized before the computation
-
-        Returns:
-            Dict[str, float]: mordred fingerprints
-        """
-        assert util.find_spec("mordred"), (
-            "Mordred fingerprints require the `mordred` Python package. "
-            "Please install with "
-            "`pip install 'psmiles[mordred]@git+https://github.com/"
-            "Ramprasad-Group/psmiles.git`'"
-            "Or "
-            "`poetry add git+https://github.com/"
-            "Ramprasad-Group/psmiles.git -E mordred` "
-        )
-        from mordred import Calculator, descriptors
-
-        calc = Calculator(descriptors, ignore_3D=True)
-        can_smiles = self.canonicalize
-        dim = calc.pandas(
-            [can_smiles.dimer().replace_stars("[At]").mol], quiet=True, nproc=1
-        )
-        mon = calc.pandas([can_smiles.replace_stars("[At]").mol], quiet=True, nproc=1)
-        fps = dim.fill_missing().T - mon.fill_missing().T
-
-        return fps[0].to_dict()
 
     @property
     def fingerprint_circular(self) -> np.ndarray:
