@@ -1467,7 +1467,7 @@ wheels = [
 [[package]]
 name = "psmiles"
 version = "0.6.10"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "canonicalize-psmiles" },
     { name = "numpy" },

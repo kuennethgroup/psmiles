@@ -1,6 +1,6 @@
 [project]
 name = "psmiles"
-version = "0.6.10"
+version = "0.6.11"
 description = "A Python package for working with PSMILES (polymer SMILES) strings."
 authors = [{ name = "Christopher Kuenneth", email = "christopher.kuenneth@gmail.com" }]
 requires-python = ">=3.12"
@@ -45,3 +45,6 @@ dev = [
 [tool.uv.sources]
 canonicalize-psmiles = { git = "https://github.com/Ramprasad-Group/canonicalize_psmiles.git" }
 
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
