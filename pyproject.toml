@@ -3,7 +3,7 @@ name = "psmiles"
 version = "0.6.10"
 description = "A Python package for working with PSMILES (polymer SMILES) strings."
 authors = [{ name = "Christopher Kuenneth", email = "christopher.kuenneth@gmail.com" }]
-requires-python = ">=3.8,<4.0"
+requires-python = ">=3.12"
 readme = "README.md"
 license = "MIT"
 keywords = [
@@ -12,15 +12,14 @@ keywords = [
     "SMILES",
 ]
 dependencies = [
-    "numpy>1.19.0",
-    "pandas>1.1.0",
-    "rdkit>=2022.3.3",
-    "scikit-learn>=1.1.2,<2",
     "canonicalize-psmiles",
+    "numpy>=2.3.4",
+    "pandas>=2.3.3",
+    "rdkit>=2025.9.1",
+    "scikit-learn>=1.3.2",
 ]
 
 [project.optional-dependencies]
-mordred = ["mordred>=1.2.0,<2"]
 polyBERT = ["sentence-transformers>=2.2.0,<3"]
 docs = [
     "mkdocstrings[python]>=0.19.0,<0.20",
@@ -31,14 +30,14 @@ docs = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Ramprasad-Group/psmiles"
+Repository = "https://github.com/kuennethgroup/psmiles"
 
 [dependency-groups]
 dev = [
-    "pytest>=7.4.0,<8",
-    "ipykernel>=6.6.1,<7",
-    "black>=22.8.0,<23",
-    "pre-commit>=2.20.0,<3",
+    "black>=22.12.0",
+    "ipykernel>=6.31.0",
+    "pre-commit>=2.21.0",
+    "pytest>=7.4.4",
 ]
 
 [tool.uv]
@@ -46,6 +45,3 @@ dev = [
 [tool.uv.sources]
 canonicalize-psmiles = { git = "https://github.com/Ramprasad-Group/canonicalize_psmiles.git" }
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
