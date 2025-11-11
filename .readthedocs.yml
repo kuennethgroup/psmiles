@@ -5,7 +5,8 @@ build:
   tools:
     python: "3.9"
 
-mkdocs: {}
+mkdocs: 
+  configuration: mkdocs.yml
 
 python:
   install:
