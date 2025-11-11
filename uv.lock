@@ -1819,13 +1819,6 @@ dependencies = [
 ]
 
 [package.optional-dependencies]
-docs = [
-    { name = "mkdocs" },
-    { name = "mkdocs-jupyter" },
-    { name = "mkdocs-material" },
-    { name = "mkdocstrings", extra = ["python"] },
-    { name = "mkdocstrings-python" },
-]
 polybert = [
     { name = "sentence-transformers" },
 ]
@@ -1837,22 +1830,24 @@ dev = [
     { name = "pre-commit" },
     { name = "pytest" },
 ]
+docs = [
+    { name = "mkdocs" },
+    { name = "mkdocs-jupyter" },
+    { name = "mkdocs-material" },
+    { name = "mkdocstrings", extra = ["python"] },
+    { name = "mkdocstrings-python" },
+]
 
 [package.metadata]
 requires-dist = [
     { name = "canonicalize-psmiles", git = "https://github.com/kuennethgroup/canonicalize_psmiles.git" },
-    { name = "mkdocs", marker = "extra == 'docs'", specifier = ">=1.4.2,<2" },
-    { name = "mkdocs-jupyter", marker = "extra == 'docs'", specifier = ">=0.22.0,<0.23" },
-    { name = "mkdocs-material", marker = "extra == 'docs'", specifier = ">=8.5.11,<9" },
-    { name = "mkdocstrings", extras = ["python"], marker = "extra == 'docs'", specifier = ">=0.19.0,<0.20" },
-    { name = "mkdocstrings-python", marker = "extra == 'docs'", specifier = ">=0.8.2,<0.9" },
     { name = "numpy", specifier = ">=2.1" },
     { name = "pandas", specifier = ">=2.3.3" },
     { name = "rdkit", specifier = ">=2025.9.1" },
     { name = "scikit-learn", specifier = ">=1.3.2" },
     { name = "sentence-transformers", marker = "extra == 'polybert'", specifier = ">=2.7.0" },
 ]
-provides-extras = ["polybert", "docs"]
+provides-extras = ["polybert"]
 
 [package.metadata.requires-dev]
 dev = [
@@ -1860,6 +1855,13 @@ dev = [
     { name = "ipykernel", specifier = ">=6.31.0" },
     { name = "pre-commit", specifier = ">=2.21.0" },
     { name = "pytest", specifier = ">=7.4.4" },
+]
+docs = [
+    { name = "mkdocs", specifier = ">=1.4.2,<2" },
+    { name = "mkdocs-jupyter", specifier = ">=0.22.0,<0.23" },
+    { name = "mkdocs-material", specifier = ">=8.5.11,<9" },
+    { name = "mkdocstrings", extras = ["python"], specifier = ">=0.19.0,<0.20" },
+    { name = "mkdocstrings-python", specifier = ">=0.8.2,<0.9" },
 ]
 
 [[package]]

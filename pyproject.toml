@@ -22,13 +22,7 @@ Repository = "https://github.com/kuennethgroup/psmiles"
 
 [project.optional-dependencies]
 polybert = ["sentence-transformers>=2.7.0"]
-docs = [
-    "mkdocstrings[python]>=0.19.0,<0.20",
-    "mkdocs>=1.4.2,<2",
-    "mkdocs-material>=8.5.11,<9",
-    "mkdocstrings-python>=0.8.2,<0.9",
-    "mkdocs-jupyter>=0.22.0,<0.23",
-]
+
 
 [dependency-groups]
 dev = [
@@ -36,6 +30,14 @@ dev = [
     "ipykernel>=6.31.0",
     "pre-commit>=2.21.0",
     "pytest>=7.4.4",
+]
+
+docs = [
+    "mkdocstrings[python]>=0.19.0,<0.20",
+    "mkdocs>=1.4.2,<2",
+    "mkdocs-material>=8.5.11,<9",
+    "mkdocstrings-python>=0.8.2,<0.9",
+    "mkdocs-jupyter>=0.22.0,<0.23",
 ]
 
 
