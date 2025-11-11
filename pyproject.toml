@@ -5,13 +5,13 @@ description = "A Python package for working with PSMILES (polymer SMILES) string
 authors = [
     { name = "Christopher Kuenneth", email = "christopher.kuenneth@gmail.com" },
 ]
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 readme = "README.md"
 license = "MIT"
 keywords = ["science", "polymer", "SMILES"]
 dependencies = [
     "canonicalize-psmiles",
-    "numpy>=2.3.4",
+    "numpy>=2.1",
     "pandas>=2.3.3",
     "rdkit>=2025.9.1",
     "scikit-learn>=1.3.2",
