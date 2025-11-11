@@ -42,7 +42,7 @@ dev = [
 [tool.uv]
 
 [tool.uv.sources]
-canonicalize-psmiles = { git = "https://github.com/Ramprasad-Group/canonicalize_psmiles.git" }
+canonicalize-psmiles = { git = "https://github.com/kuennethgroup/canonicalize_psmiles.git" }
 
 [build-system]
 requires = ["setuptools>=42"]
