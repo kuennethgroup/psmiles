@@ -42,4 +42,4 @@ Create an alternating copolymer
 [*]CCCCO[*]
 ```
 
-See the [test_book.ipynb](https://github.com/Ramprasad-Group/psmiles/blob/main/tests/test_book.ipynb) at GitHub or directly open it in [Colab](https://colab.research.google.com/github/Ramprasad-Group/psmiles/blob/main/tests/test_book.ipynb) for more examples.
+See the [test_book.ipynb](https://github.com/kuennethgroup/psmiles/blob/main/tests/test_book.ipynb) at GitHub or directly open it in [Colab](https://colab.research.google.com/github/kuennethgroup/psmiles/blob/main/tests/test_book.ipynb) for more examples.

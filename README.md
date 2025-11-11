@@ -33,7 +33,7 @@ See the [Documentation](https://psmiles.readthedocs.io/) for more. Also, check o
 
 ## Features, functions, and roadmap
 
-- [x] Canonicalize PSMILES strings (via the [canonicalize_psmiles](https://github.com/Ramprasad-Group/canonicalize_psmiles) package)
+- [x] Canonicalize PSMILES strings (via the [canonicalize_psmiles](https://github.com/kuennethgroup/canonicalize_psmiles) package)
 - [x] Polymer fingerprints (descriptors or features)
     - [x] polyBERT fingerprints (see [polyBERT](https://github.com/Ramprasad-Group/polyBERT) and [arXiv](https://arxiv.org/abs/2209.14803))
     - [x] Circular (Morgen) fingerprints as implemented in RDKit

@@ -5,7 +5,7 @@ The `psmiles` Python package provides tools and functions for polymer SMILES (PS
 
 [Install](install.md){ .md-button .md-button--primary }
 [Usage](usage.md){ .md-button .md-button--primary }
-[Run on Colab](https://colab.research.google.com/github/Ramprasad-Group/psmiles/blob/main/tests/test_book.ipynb){ .md-button .md-button--primary }
+[Run on Colab](https://colab.research.google.com/github/kuennethgroup/psmiles/blob/main/tests/test_book.ipynb){ .md-button .md-button--primary }
 
 ## What is a PSMILES string?
 

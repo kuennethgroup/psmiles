@@ -1,6 +1,6 @@
 site_name: PSMILES
-repo_url: https://github.com/Ramprasad-Group/psmiles
-repo_name: Ramprasad-Group/psmiles
+repo_url: https://github.com/kuennethgroup/psmiles
+repo_name: kuennethgroup/psmiles
 site_author: Christopher Kuenneth
 
 theme:
